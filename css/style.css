@@ -1,0 +1,85 @@
+body.rtl{
+    direction: rtl;
+}
+body{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    background:linear-gradient(240deg,rgb(12,12,12,0.2),lightblue, rgb(176, 230, 248));
+    background-repeat: no-repeat;
+}
+td{
+    border: 2px solid black;
+    color:rgb(15, 15, 15);
+    font-size: 1.5em;
+    background:linear-gradient(30deg,rgb(12,12,12,0.2),lightblue, rgb(176, 230, 248));
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.header-title-container{
+    width: 50%;
+    text-align: center;
+    color:red;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.select-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.the-table-section{
+    display:flex;
+    justify-content: center;
+}
+.books-table{
+    text-align: center;
+    /* display: flex; */
+    /* justify-content: center; */
+    width: 80vw;
+    height: 50vh;
+}
+.modal{
+    height: 400px;
+    text-align: center;
+    background-color: aqua;
+}
+[name=new-book-name]{
+    color:red
+}
+[name=rate]{
+    color:red;
+    border:none;
+    background-color: aqua;
+    width:20px;
+    text-align:center;
+}
+[name=table-price]{
+    width:10%
+}
+.pages{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block-start: 30px;
+    /* position: absolute; */
+    /* margin-inline-end: auto; */
+}
+.btn-page-prev{
+    width:5rem;
+    height: 2.5rem;
+    border-radius: 20px;
+
+}
+.btn-page-next{
+    width:5rem;
+    height: 2.5rem;
+    border-radius: 20px;
+   
+}
+.page-num{
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+    font-size: 1.2em;
+}

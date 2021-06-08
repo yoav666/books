@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>book-shop</title>
+</head>
+
+<body onload="onInit()">
+    <header>
+        <div class="header-title-container">
+            <h1 data-trans="header-title" class="title">book-shop</h1>
+        </div>
+        <div class="select-container">
+            <select onchange="onSetLang(this.value)">
+                <option value="en">English</option>
+                <option value="he">עברית</option>
+                <option value="ru">русский</option>
+            </select>
+        </div>
+    </header>
+    <div class="add-book-container">
+        <button data-trans="btn-add-new-book" class="add-book" onclick="onAddBook()">Add New Book</button>
+        <input data-trans="new-book-name-placeholder" name="new-book-name" type="text" placeholder="Book Name" hidden>
+        <input data-trans="new-book-price-placeholder" name="new-book-price" type="text" placeholder="Book Price"
+            hidden>
+        <button data-trans="btn-new-book-update" class="new-book-update" hidden>Update</button>
+        <button data-trans="btn-new-book-close" class="new-book-close" hidden>Close</button>
+    </div>
+    <section class="the-table-section">
+        <table class="books-table">
+            <thead class="books-thead">
+                <th data-trans="table-id">Id</th>
+                <th data-trans="table-book-name" onclick="onSortBy('name')">Name</th>
+                <th data-trans="table-book-price" onclick="onSortBy('price')">Price</th>
+                <th data-trans="table-btns-action" colspan="3">Action</th>
+            </thead>
+            <tbody class="books-tbody"></tbody>
+        </table>
+    </section>
+    <section class="modal" hidden>
+        <h3><span data-trans="modal-book-name">Name</span>:<span class="book-modal-name"></span></h3>
+        <h3><span data-trans="modal-book-price">Price</span>:<span class="book-modal-price"></span></h3>
+        <h3><span data-trans="modal-book-rate">Rate</span>:<span class="book-modal-rate"></span></h3>
+        <button class="btn-rate-minus">-</button>
+        <input type="text" name="rate">
+        <button class="btn-rate-plus">+</button>
+        <button data-trans="btn-modal-rate-update" class="btn-rate-update">Update</button>
+        <h3><span data-trans="modal-book-desc">Desc</span>:<span class="book-modal-desc"></span></h3>
+        <button data-trans="btn-modal-close" class="btn-modal-close" onclick="onCloseModal()">close</button>
+    </section>
+    <section>
+        <div class="pages">
+            <button data-trans="btn-page-prev" class="btn btn-page-prev" onclick="onTurnPage(-1)">Prev</button>
+            <span class="page-num">1</span>
+            <button data-trans="btn-page-next" class="btn btn-page-next" onclick="onTurnPage(1)">Next</button>
+        </div>
+    </section>
+
+    <script src="js/service/utils-service.js"></script>
+    <script src="js/service/i18n-service.js"></script>
+    <script src="js/service/storage-service.js"></script>
+    <script src="js/service/book-shop-service.js"></script>
+    <script src="js/book-shop-controller.js"></script>
+</body>
+
+</html>
